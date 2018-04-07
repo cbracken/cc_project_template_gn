@@ -1,0 +1,31 @@
+executable("main") {
+  sources = [
+    "main.cc",
+  ]
+  deps = [
+    ":foo_srcs",
+  ]
+}
+
+source_set("foo_srcs") {
+  sources = [
+    "bar.cc",
+    "bar.h",
+    "foo.cc",
+    "foo.h",
+  ]
+}
+
+executable("foo_tests") {
+  testonly = true
+
+  sources = [
+    "bar_test.cc",
+    "foo_test.cc",
+  ]
+  deps = [
+    ":foo_srcs",
+    "//third_party/googletest:gtest",
+    "//third_party/googletest:gtest_main",
+  ]
+}
