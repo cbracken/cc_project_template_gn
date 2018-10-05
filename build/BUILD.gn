@@ -24,3 +24,38 @@ config("compiler_warnings") {
     "-Wno-c++98-compat",
   ]
 }
+
+# Debug mode build.
+config("debug") {
+  defines = [ "_DEBUG" ]
+}
+
+# Release mode build.
+config("release") {
+  defines = [ "NDEBUG" ]
+}
+
+# Disable optimisations.
+config("no_optimize") {
+  cflags = [ "-O0" ]
+}
+
+# Enable optimisations.
+config("optimize") {
+  cflags = [ "-O2" ]
+}
+
+# Regular build with symbols.
+config("symbols") {
+  cflags = [ "-g2" ]
+}
+
+# Minimal symbols, typically just enough for backtraces.
+config("min_symbols") {
+  cflags = [ "-g1" ]
+}
+
+# No symbols.
+config("no_symbols") {
+  cflags = [ "-g0" ]
+}
