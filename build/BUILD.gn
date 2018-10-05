@@ -1,3 +1,4 @@
+# Default language standards.
 config("compiler_std") {
   cflags_c = [
     "-std=c11",
@@ -5,14 +6,21 @@ config("compiler_std") {
   cflags_cc = [
     "-std=c++17",
   ]
+  cflags_objcc = [
+    "-std=c++17",
+  ]
 }
 
+# Default compiler warnings.
 config("compiler_warnings") {
   cflags = [
     "-Weverything",
     "-Werror",
   ]
   cflags_cc = [
+    "-Wno-c++98-compat",
+  ]
+  cflags_objcc = [
     "-Wno-c++98-compat",
   ]
 }
