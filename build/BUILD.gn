@@ -1,12 +1,18 @@
-config("compiler_defaults") {
-  cflags = [
+config("compiler_std") {
+  cflags_c = [
+    "-std=c11",
+  ]
+  cflags_cc = [
     "-std=c++17",
-    "-Weverything",
-    "-Wno-c++98-compat",
   ]
 }
 
-config("executable_ldconfig") {
-  ldflags = [
+config("compiler_warnings") {
+  cflags = [
+    "-Weverything",
+    "-Werror",
+  ]
+  cflags_cc = [
+    "-Wno-c++98-compat",
   ]
 }
