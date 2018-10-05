@@ -1,0 +1,12 @@
+config("compiler_defaults") {
+  cflags = [
+    "-std=c++17",
+    "-Weverything",
+    "-Wno-c++98-compat",
+  ]
+}
+
+config("executable_ldconfig") {
+  ldflags = [
+  ]
+}
