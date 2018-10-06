@@ -19,9 +19,11 @@ config("compiler_warnings") {
   ]
   cflags_cc = [
     "-Wno-c++98-compat",
+    "-Wno-c++98-compat-pedantic",
   ]
   cflags_objcc = [
     "-Wno-c++98-compat",
+    "-Wno-c++98-compat-pedantic",
   ]
 }
 
