@@ -19,6 +19,7 @@ config("gtest_private_config") {
     "-Wno-unused-template",
     "-Wno-used-but-marked-unused",
     "-Wno-zero-as-null-pointer-constant",
+    "-Wno-extra-semi-stmt",
   ]
   ldflags = ["-lpthread"]
 }

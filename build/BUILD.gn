@@ -16,6 +16,7 @@ config("compiler_warnings") {
   cflags = [
     "-Weverything",
     "-Werror",
+    "-Wno-disabled-macro-expansion",
   ]
   cflags_cc = [
     "-Wno-c++98-compat",
