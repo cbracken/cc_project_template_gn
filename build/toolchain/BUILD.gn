@@ -116,7 +116,7 @@ toolchain("clang") {
       unstripped_outfile = "{{root_out_dir}}/exe.unstripped/{{target_output_name}}{{output_extension}}"
     }
     if (target_os == "mac") {
-      command = "$ld {{ldflags}} -o \"$unstripped_outfile\" -Wl,-filelist,\"$rspfile\" {{solibs}} {{libs}}"
+      command = "$ld {{ldflags}} -o \"$unstripped_outfile\" -Wl,-filelist,\"$rspfile\" {{frameworks}} {{solibs}} {{libs}}"
       rspfile_content = "{{inputs_newline}}"
     } else {
       command = "$ld {{ldflags}} -o \"$unstripped_outfile\" -Wl,--Map=\"$unstripped_outfile.map\" -Wl,--start-group @\"$rspfile\" {{solibs}} -Wl,--end-group {{libs}}"
