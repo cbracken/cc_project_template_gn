@@ -14,18 +14,12 @@ config("compiler_std") {
 # Default compiler warnings.
 config("compiler_warnings") {
   cflags = [
-    "-Weverything",
+    "-Wall",
+    "-Wextra",
     "-Werror",
-    "-Wno-disabled-macro-expansion",
   ]
-  cflags_cc = [
-    "-Wno-c++98-compat",
-    "-Wno-c++98-compat-pedantic",
-  ]
-  cflags_objcc = [
-    "-Wno-c++98-compat",
-    "-Wno-c++98-compat-pedantic",
-  ]
+  cflags_cc = []
+  cflags_objcc = []
 }
 
 # Debug mode build.
