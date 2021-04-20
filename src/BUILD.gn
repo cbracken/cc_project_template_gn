@@ -7,13 +7,23 @@ executable("main") {
   ]
 }
 
+FOO_SOURCES = [
+  "bar.cc",
+  "bar.h",
+  "foo.cc",
+  "foo.h",
+]
+
 source_set("foo_srcs") {
-  sources = [
-    "bar.cc",
-    "bar.h",
-    "foo.cc",
-    "foo.h",
-  ]
+  sources = FOO_SOURCES
+}
+
+static_library("libfoo_static") {
+  sources = FOO_SOURCES
+}
+
+shared_library("libfoo_shared") {
+  sources = FOO_SOURCES
 }
 
 executable("foo_tests") {
